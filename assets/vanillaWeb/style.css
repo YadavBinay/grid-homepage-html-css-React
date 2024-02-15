@@ -1,0 +1,102 @@
+:root {
+    --radius: 5px;
+    --gap: .4rem;
+}
+
+body {
+    margin: 0;
+
+}
+
+.wrapper {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: .2fr .75fr .75fr .4fr .6fr;
+    grid-template-areas:
+        "nav nav nav nav nav"
+        "sidebar main main main c1"
+        "sidebar main main main c2"
+        "sidebar c3 c3 c4 c4"
+        "sidebar footer footer footer footer";
+    gap: var(--gap);
+    color: black;
+    text-align: center;
+}
+
+.wrapper>* {
+    border-radius: var(--radius);
+
+}
+
+nav {
+    background: tomato;
+    grid-area: nav;
+}
+
+.sidebar {
+    background: pink;
+    grid-area: sidebar;
+}
+
+main {
+    background: red;
+    grid-area: main;
+}
+
+.content1 {
+    background: #aaa;
+    grid-area: c1;
+}
+
+.content2 {
+    grid-area: c2;
+    background: #aDa;
+}
+
+.content3 {
+    grid-area: c3;
+    background: #a3a;
+}
+
+.content4 {
+    grid-area: c4;
+    background: #aaA;
+}
+
+footer {
+    background: purple;
+    grid-area: footer;
+}
+
+@media only screen and (min-width: 400px) and (max-width: 800px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: .2fr 1.5fr .4fr .3fr .3fr .6fr;
+        grid-template-areas:
+            "nav nav nav nav nav"
+            "main main main main main"
+            "sidebar sidebar sidebar sidebar sidebar"
+            "c1 c1 c1 c2 c2"
+            "c3 c3 c4 c4 c4"
+            "footer footer footer footer footer";
+    }
+}
+
+@media only screen and (max-width: 399px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: .2fr 1.5fr .4fr .6fr .6fr .6fr .6fr .3fr;
+        grid-template-areas: "nav nav nav nav nav"
+            "main main main main main"
+            "sidebar sidebar sidebar sidebar sidebar"
+            "c1 c1 c1 c1 c1"
+            "c2 c2 c2 c2 c2"
+            "c3 c3 c3 c3 c3"
+            "c4 c4 c4 c4 c4"
+            "footer footer footer footer footer";
+        font-size: small;
+    }
+}
